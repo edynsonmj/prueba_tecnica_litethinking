@@ -3,6 +3,8 @@ package co.litethinking.core.appbackend.models;
 import java.sql.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,9 +32,10 @@ public class Orden {
     @Column(name="ord_fecha")
     private Date fecha;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "objOrden")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "objOrden")
     private List<Producto> productos;
 
+    @JsonIgnore
     @ManyToOne()
     @JoinColumn(name = "ord_cliente_id")
     private Cliente objCliente;

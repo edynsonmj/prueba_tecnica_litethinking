@@ -36,9 +36,9 @@ public class Producto {
     @JoinColumn(name = "pro_orden_codigo")
     private Orden objOrden;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "objProduct")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "objProduct")
     private List<Precio> precios;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "objProducto")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "objProducto")
     private List<Clasificacion> clasificaciones;
 }

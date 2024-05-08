@@ -2,6 +2,8 @@ package co.litethinking.core.appbackend.models;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -21,10 +23,11 @@ public class Cliente {
     @Id
     @Column(name="cli_id")
     private String id;
-    
+
     @Column(name="cli_nombre")
     private String nombre;
 
+    @JsonIgnore
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "objCliente")
     private List<Orden> ordenes;
 }

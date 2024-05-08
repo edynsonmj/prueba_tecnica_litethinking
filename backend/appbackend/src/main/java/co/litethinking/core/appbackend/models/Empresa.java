@@ -26,9 +26,9 @@ public class Empresa {
     @Column(name="emp_direccion")
     private String direccion;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "objEmpresa")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "objEmpresa")
     private List<Telefono> telefonos;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "objEmpresa")
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "objEmpresa")
     private List<Producto> productos;
 }
