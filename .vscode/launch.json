@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-AppbackendApplication<appbackend>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "co.litethinking.core.appbackend.AppbackendApplication",
+            "projectName": "appbackend",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
